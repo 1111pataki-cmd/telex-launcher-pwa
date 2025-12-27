@@ -3,21 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telex</title>
-
-  <!-- Manifest betöltése -->
+  <title>Telex Launcher</title>
   <link rel="manifest" href="manifest.json">
+  <style>
+    body {
+      margin:0; height:100vh;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      font-family:sans-serif;
+    }
+    img { width:120px; }
+    button {
+      margin-top:20px; padding:12px 24px;
+      font-size:18px; cursor:pointer;
+    }
+  </style>
+</head>
+<body>
 
-  <!-- Service worker regisztrálás -->
+  <img src="icon-512.png" alt="Telex">
+  <button onclick="openTelex()">Telex megnyitása</button>
+
   <script>
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker.register("sw.js");
     }
 
-    // Automatikus átirányítás a Telexre
-    window.location.href = "https://telex.hu";
+    function openTelex() {
+      window.location.href = "https://telex.hu";
+    }
   </script>
-</head>
-<body>
+
 </body>
 </html>
